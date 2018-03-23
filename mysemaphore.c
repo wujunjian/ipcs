@@ -71,6 +71,8 @@ int main(int argc, char** argv)
     int sempid = semctl(semid, 1, GETPID);
 
     printf("%d %d %d %d\n", semval, semnznt, semncnt, sempid);
+    //删除
+    semctl(semid, 0, IPC_RMID);
 
     return 0;
 }
